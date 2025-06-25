@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Algorithm Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Advanced Algorithm Visualizer</h1>
+        <p>Visualize advanced searching and sorting algorithms in real-time</p>
+      </header>
+
+      <main>
+        <!-- Input Section -->
+        <section class="input-section">
+          <div class="input-group">
+            <label for="array-input">Array (comma-separated)</label>
+            <input 
+              type="text" 
+              id="array-input" 
+              placeholder="e.g., 64,34,25,12,22,11,90"
+              value="64,34,25,12,22,11,90"
+            />
+            <button id="generate-random">Generate Random</button>
+          </div>
+
+          <div class="controls-grid">
+            <!-- Sorting Controls -->
+            <div class="control-group">
+              <h3>Sorting Algorithms</h3>
+              <select id="sort-algorithm">
+                <optgroup label="Basic Algorithms">
+                  <option value="bubble">Bubble Sort</option>
+                  <option value="insertion">Insertion Sort</option>
+                  <option value="selection">Selection Sort</option>
+                </optgroup>
+                <optgroup label="Advanced Algorithms">
+                  <option value="merge">Merge Sort</option>
+                  <option value="quick">Quick Sort</option>
+                  <option value="tim">Tim Sort</option>
+                </optgroup>
+              </select>
+              <button id="sort-btn" class="primary-btn">Start Sort</button>
+            </div>
+
+            <!-- Searching Controls -->
+            <div class="control-group">
+              <h3>Searching Algorithms</h3>
+              <input 
+                type="number" 
+                id="search-input" 
+                placeholder="Number to search"
+              />
+              <select id="search-algorithm">
+                <optgroup label="Basic Algorithms">
+                  <option value="linear">Linear Search</option>
+                  <option value="binary">Binary Search</option>
+                </optgroup>
+                <optgroup label="Advanced Algorithms">
+                  <option value="hash">Hash Search</option>
+                  <option value="interpolation">Interpolation Search</option>
+                </optgroup>
+              </select>
+              <button id="search-btn" class="primary-btn">Start Search</button>
+            </div>
+          </div>
+
+          <div class="action-controls">
+            <button id="reset-btn">Reset</button>
+            <button id="stop-btn" disabled>Stop Animation</button>
+          </div>
+        </section>
+
+        <!-- Algorithm Info Section -->
+        <section class="algorithm-info-section">
+          <div class="algorithm-details">
+            <h3 id="algorithm-name">Select an Algorithm</h3>
+            <p id="algorithm-description">Choose a sorting or searching algorithm to see its description and complexity.</p>
+            <div class="complexity-info">
+              <div class="complexity-item">
+                <span class="complexity-label">Time Complexity:</span>
+                <span id="time-complexity">-</span>
+              </div>
+              <div class="complexity-item">
+                <span class="complexity-label">Space Complexity:</span>
+                <span id="space-complexity">-</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Visualization Section -->
+        <section class="visualization-section">
+          <div class="algorithm-info">
+            <h3 id="algorithm-title">Array Visualization</h3>
+            <div class="stats">
+              <span id="comparisons">Comparisons: 0</span>
+              <span id="swaps">Swaps: 0</span>
+            </div>
+          </div>
+          
+          <div class="visualization-container">
+            <div id="array-container"></div>
+          </div>
+
+          <div class="legend">
+            <div class="legend-item">
+              <div class="legend-color default"></div>
+              <span>Default</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color comparing"></div>
+              <span>Comparing</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color swapping"></div>
+              <span>Swapping/Active</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color sorted"></div>
+              <span>Sorted</span>
+            </div>
+            <div class="legend-item">
+              <div class="legend-color found"></div>
+              <span>Found/Pivot</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
