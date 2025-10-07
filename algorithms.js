@@ -1,4 +1,4 @@
-// Sorting Algorithms
+//  Sorting Algorithms
 export class SortingAlgorithms {
   constructor(visualizer) {
     this.visualizer = visualizer;
@@ -664,4 +664,5 @@ export class SearchingAlgorithms {
   delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
+
 }
